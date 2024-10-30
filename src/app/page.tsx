@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
+import { clients } from "@/constans/clients";
 import { ArrowRightCircle, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,6 +32,13 @@ export default function Home() {
                     <Image src="/images/Hero-image.svg" width={670} height={370} alt="hero" className="mx-auto shadow-xl"/>
                 </div>
             </section>
+            {/* clients section */}
+            <section id="clients" className="max-w-[62rem] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-12 gap-y-4">
+                {clients.map((client, index)=>(
+                    <Image key={index} src={client.imageURL} alt={client.alt} width={120} height={80} className="w-40 md:w-full mx-auto"/>
+                ))}
+            </section>
+            {/* clients section */}
         </div>
     </main>
   );
