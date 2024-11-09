@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
 import { clients } from "@/constans/clients";
+import { features } from "@/constans/feature";
 import { ArrowRightCircle, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,7 +39,22 @@ export default function Home() {
                     <Image key={index} src={client.imageURL} alt={client.alt} width={120} height={80} className="w-40 md:w-full mx-auto"/>
                 ))}
             </section>
-            {/* clients section */}
+            {/* feature section */}
+            <section id="features" className="flex flex-col gap-y-12 md:gap-y-28">
+                <div className="relative grid grid-cols-1 lg:grid-col-2 items-center gap-12">
+                    {/* <Image src="/images/bg2.png" width={1920} height={1080} alt="second banner" className="absolute -z-50 top-0 left-0 opacity-5"/> */}
+                    <div className="flex flex-col gap-4 items-center text-center lg:items-start lg:text-start">
+                        <Heading title="Powerful features to help you manage all your leads."/>
+                        <p className="lg:max-w-[34rem] leading-normal sm:text-lg sm:leading-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, doloremque est corrupti omnis quo molestiae adipisci pariatur ea repellat animi neque tempora officia. Consectetur harum dicta perspiciatis sapiente magnam inventore.</p>
+                        <Button>Get Started</Button>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-4">
+                        {features.map((feature ,index) => (
+                            <div key={index}>{feature.title} </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
   );
