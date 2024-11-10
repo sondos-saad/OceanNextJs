@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import FeatureCard from "@/components/FeatureCard";
 import Heading from "@/components/Heading";
 import { clients } from "@/constans/clients";
 import { features } from "@/constans/feature";
@@ -41,7 +42,7 @@ export default function Home() {
             </section>
             {/* feature section */}
             <section id="features" className="flex flex-col gap-y-12 md:gap-y-28">
-                <div className="relative grid grid-cols-1 lg:grid-col-2 items-center gap-12">
+                <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
                     {/* <Image src="/images/bg2.png" width={1920} height={1080} alt="second banner" className="absolute -z-50 top-0 left-0 opacity-5"/> */}
                     <div className="flex flex-col gap-4 items-center text-center lg:items-start lg:text-start">
                         <Heading title="Powerful features to help you manage all your leads."/>
@@ -50,7 +51,7 @@ export default function Home() {
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-4">
                         {features.map((feature ,index) => (
-                            <div key={index}>{feature.title} </div>
+                            <FeatureCard key={index} {...feature}/>
                         ))}
                     </div>
                 </div>
