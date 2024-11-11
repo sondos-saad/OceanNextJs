@@ -1,8 +1,9 @@
 import Button from "@/components/Button";
+import FeatureBlock from "@/components/FeatureBlock";
 import FeatureCard from "@/components/FeatureCard";
 import Heading from "@/components/Heading";
 import { clients } from "@/constans/clients";
-import { features } from "@/constans/feature";
+import { features, featuresBlock } from "@/constans/feature";
 import { ArrowRightCircle, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -55,6 +56,9 @@ export default function Home() {
                         ))}
                     </div>
                 </div>
+                {featuresBlock.map((item, index)=>(
+                    <FeatureBlock key={index} {...item} />
+                ))}
             </section>
         </div>
     </main>

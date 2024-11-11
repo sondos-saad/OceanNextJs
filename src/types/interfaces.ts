@@ -9,3 +9,7 @@ export interface Feature{
     title: string,
     content: string
 }
+
+export interface FeatureBlocks extends Feature{
+    isReversed?:boolean
+}
