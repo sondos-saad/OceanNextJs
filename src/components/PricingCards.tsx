@@ -1,6 +1,7 @@
 import { Pricing } from '@/types/interfaces';
 import { FC } from 'react';
 import Button from './Button';
+import { Check } from 'lucide-react';
 
 interface PricingCardProps extends Pricing{}
 
@@ -16,6 +17,14 @@ const PricingCards: FC<PricingCardProps> = ({title, description, monthlyPrice, a
                 <small className='text-base text-slate-300 font-semibold ps-1'>/month</small>
             </h1>
             <Button variant={isMostPopular ? "primary": "secondary"} isFullSize>buy plan</Button>
+            <ul className='space-y-4'>
+                {features.map((feature , index) => (
+                    <li key={index} className='flex items-center gap-4'>
+                        <Check className='text-sky-600'/>
+                        {feature}
+                    </li>
+                ))}
+            </ul>
     </article>
        
     

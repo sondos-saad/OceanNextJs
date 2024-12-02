@@ -23,3 +23,5 @@ export interface Pricing {
     isMostPopular?: boolean,
     glowPosition?: 'right' | 'left'
 }
+
+export type PricingMode = 'monthly' | 'annually';
