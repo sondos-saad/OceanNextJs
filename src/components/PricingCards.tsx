@@ -1,11 +1,13 @@
-import { Pricing } from '@/types/interfaces';
+import { Pricing, PricingMode } from '@/types/interfaces';
 import { FC } from 'react';
 import Button from './Button';
 import { Check } from 'lucide-react';
 
-interface PricingCardProps extends Pricing{}
+interface PricingCardProps extends Pricing{
+    mode:PricingMode
+}
 
-const PricingCards: FC<PricingCardProps> = ({title, description, monthlyPrice, annuallyPrice , features, isMostPopular, glowPosition}) => {
+const PricingCards: FC<PricingCardProps> = ({title, description, monthlyPrice, annuallyPrice , features, isMostPopular, glowPosition, mode}) => {
     return(
     <article className={`relative w-full py-6 px-4 flex flex-col space-y-4 lg:space-y-6 ${isMostPopular ? "border-2 border-sky-700 bg-slate-800":"border border-slate-700"} rounded-lg overflow-hidden`}> 
         <figure className={`absolute w-72 h-60 bg-sky-600 -z-10 rounded-full blur-3xl opacity-20 -top-12 ${glowPosition === "left"? "-left-8": "-right-8"}`} />
@@ -13,8 +15,8 @@ const PricingCards: FC<PricingCardProps> = ({title, description, monthlyPrice, a
             <h1 className='text-slate-100 font-bold text-base capitalize '>{title}</h1>
             <p>{description}</p>
             <h1 className='font-extrabold text-slate-100 text-4xl'>
-                ${monthlyPrice} 
-                <small className='text-base text-slate-300 font-semibold ps-1'>/month</small>
+                ${mode == "monthly"? monthlyPrice: annuallyPrice} 
+                <small className='text-base text-slate-300 font-semibold ps-1'>/{mode === "monthly" ? "month" : "Year"}</small>
             </h1>
             <Button variant={isMostPopular ? "primary": "secondary"} isFullSize>buy plan</Button>
             <ul className='space-y-4'>

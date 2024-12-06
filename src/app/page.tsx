@@ -62,6 +62,13 @@ export default function Home() {
                 ))}
             </section>
             <PricingSection/>
+            {/* testimonials section */}
+            <section id="testimonials" className="flex flex-col gap-8">
+                <Heading title="Meet our customers" isCentered/>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    
+                </div>
+            </section>
         </div>
     </main>
   );
