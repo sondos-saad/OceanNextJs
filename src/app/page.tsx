@@ -3,8 +3,10 @@ import FeatureBlock from "@/components/FeatureBlock";
 import FeatureCard from "@/components/FeatureCard";
 import Heading from "@/components/Heading";
 import PricingSection from "@/components/PricingSection";
+import TestimonialCard from "@/components/TestimonialCard";
 import { clients } from "@/constans/clients";
 import { features, featuresBlock } from "@/constans/feature";
+import { testimonials } from "@/constans/testimonials";
 import { ArrowRightCircle, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -66,7 +68,9 @@ export default function Home() {
             <section id="testimonials" className="flex flex-col gap-8">
                 <Heading title="Meet our customers" isCentered/>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    
+                    {testimonials.map((testimonial , index) =>(
+                        <TestimonialCard key={index} {...testimonial}/>
+                    ))}
                 </div>
             </section>
         </div>

@@ -24,4 +24,11 @@ export interface Pricing {
     glowPosition?: 'right' | 'left'
 }
 
+export interface Testimonial{
+    imageUrl : string;
+    name: string;
+    role: string;
+    review: string;
+}
+
 export type PricingMode = 'monthly' | 'annually';
