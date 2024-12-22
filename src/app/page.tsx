@@ -73,6 +73,19 @@ export default function Home() {
                     ))}
                 </div>
             </section>
+            {/* contact section */}
+            <section id="contact">
+                    <div className="bg-slate-800 rounded-lg px-8 lg:px-24 py-8 lg:py-12 flex flex-col lg:flex-row justify-between items-center gap-6">
+                        <div className="flex flex-col gap-4 text-center lg:text-start">
+                            <Heading title="Let's try out our service now!"/>
+                            <p className="max-w-[35rem] leading-normal text-lg">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, doloremque est corrupti omnis quo molestiae adipisci pariatur ea repellat animi neque tempora officia. Consectetur harum dicta perspiciatis sapiente magnam inventore.
+                            </p>
+                        </div>
+                        <Button>get started</Button>
+                        <MoveRight className="w-4 h-4"/>
+                    </div>
+            </section>
         </div>
     </main>
   );
