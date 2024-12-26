@@ -2,9 +2,9 @@ import { Feature } from '@/types/interfaces'
 import Image from 'next/image'
 import React from 'react'
 
-interface FeatureCardProps extends Feature {
-    
-}
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+interface FeatureCardProps extends Feature {}
+/* eslint-enable @typescript-eslint/no-empty-object-type */
 
 const FeatureCard: React.FC<FeatureCardProps> = ({imageURL, title , content}) => {
   return (

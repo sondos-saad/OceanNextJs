@@ -3,10 +3,10 @@ import Image from 'next/image';
 import {FC} from 'react';
 import Heading from '@/components/Heading';
 
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+interface FeatureBlockProps extends FeatureBlocks{}
+/* eslint-enable @typescript-eslint/no-empty-object-type */
 
-interface FeatureBlockProps extends FeatureBlocks{
-
-}
 const FeatureBlock: FC<FeatureBlockProps> = ({title, imageURL, content , isReversed}) => {
     return (
         <article className={`flex flex-col lg:flex-row items-center justify-between gap-8 ${isReversed && "lg:flex-row-reverse"}`}>

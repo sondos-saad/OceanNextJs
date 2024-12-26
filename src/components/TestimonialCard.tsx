@@ -3,9 +3,9 @@ import { Quote } from 'lucide-react'
 import Image from 'next/image'
 import {FC} from 'react'
 
-interface TestimonialCardProps extends Testimonial{
-
-}
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+interface TestimonialCardProps extends Testimonial{}
+/* eslint-enable @typescript-eslint/no-empty-object-type */
 
 const TestimonialCard: FC<TestimonialCardProps> = ({imageUrl , name , role , review}) => {
     return (
