@@ -6,6 +6,7 @@ import { footerLinks } from '@/constans/footer-links';
 
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
     return (
         <footer className='pb-4 pt-20'>
             <div className='container mb-12 flex flex-col lg:flex-row'>
@@ -45,6 +46,11 @@ const Footer = () => {
                         </article>
                     ))}
                 </div>
+            </div>
+            <div className='container border-t border-slate-700'>
+                <p className='capitalize pt-4 text-center lg:text-start'>
+                    &copy;  {` ${currentYear} ocean, inc. all rights reserved.`}
+                </p>
             </div>
         </footer>
     );
